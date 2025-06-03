@@ -57,9 +57,9 @@
 </head>
 <body class="bg-gradient-to-br from-sidebar via-chat to-conversations min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
     <script>
-      // Redirige vers index.html si déjà connecté
+      // Redirige vers index.html si déjà connecté (exécuté une seule fois, tout en haut)
       if (localStorage.getItem('isLoggedIn')) {
-        window.location.href = 'index.html';
+        window.location.replace('index.html');
       }
     </script>
     <!-- Formes flottantes décoratives -->

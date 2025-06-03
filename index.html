@@ -23,9 +23,9 @@
 </head>
   <body class="flex justify-center items-center w-screen h-screen bg-white">
   <script>
-    // Redirige vers login.html si non connecté
+    // Redirige vers login.html si non connecté (exécuté une seule fois, tout en haut)
     if (!localStorage.getItem('isLoggedIn')) {
-      window.location.href = 'login.html';
+      window.location.replace('login.html');
     }
     // Affiche le nom d'utilisateur dans le menu
     document.addEventListener('DOMContentLoaded', function() {
@@ -38,13 +38,13 @@
     function handleLogout() {
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('username');
-      window.location.href = 'login.html';
+      window.location.replace('login.html');
     }
     window.handleLogout = handleLogout;
   </script>
     <div class="flex w-[1700px] h-[900px] bg-white shadow-[0_4px_10px_rgba(0,0,0,0.25)]">
       <!-- Sidebar gauche - FIXE -->
-      <div class="flex gap-4 justify-center items-center flex-col w-[10%] h-full bg-[#F0EFE8]"></div>
+      <div class="flex gap-4 justify-center items-center flex-col w-[10%] h-full bg-[#F0EFE8]">
         <div class="border border-[#DEB449] rounded-[10px] p-[20px] w-[100px] h-[80px] hover:bg-[#DEB449] cursor-pointer transition-colors duration-200" 
              data-section="messages">
           <div class="flex justify-center ">
