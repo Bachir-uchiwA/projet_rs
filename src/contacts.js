@@ -1,10 +1,5 @@
 import * as diffusionsModule from './diffusions.js';
 
-// Vérifier la connexion au début de chaque fichier JS
-if (!localStorage.getItem('isLoggedIn') && window.location.pathname.indexOf('login.html') === -1) {
-    window.location.href = 'login.html';
-}
-
 // Variables globales
 export let contacts = [];
 export let archivedContacts = [];

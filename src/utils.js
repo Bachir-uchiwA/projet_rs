@@ -1,9 +1,5 @@
 // Vérifier la connexion au début de chaque fichier JS
 
-if (!localStorage.getItem('isLoggedIn') && window.location.pathname.indexOf('login.html') === -1) {
-    window.location.href = 'login.html';
-}
-
 // Fonction pour afficher les messages de succès
 export function showSuccessMessage(message) {
     console.log('Success:', message)

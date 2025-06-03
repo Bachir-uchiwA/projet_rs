@@ -1,9 +1,3 @@
-// Vérifier la connexion au début de chaque fichier JS
-
-if (!localStorage.getItem('isLoggedIn') && window.location.pathname.indexOf('login.html') === -1) {
-    window.location.href = 'login.html';
-}
-
 export class StatusManager {
     constructor() {
         this.onlineUsers = new Set();

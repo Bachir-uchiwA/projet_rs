@@ -7,12 +7,6 @@ import { StatusManager } from './status.js';
 
 const statusManager = new StatusManager();
 
-// Vérifier la connexion au début de chaque fichier JS
-
-if (!localStorage.getItem('isLoggedIn') && window.location.pathname.indexOf('login.html') === -1) {
-    window.location.href = 'login.html';
-}
-
 // Attendre que le DOM soit chargé
 document.addEventListener('DOMContentLoaded', function() {
     console.log('=== INITIALISATION DE L\'APPLICATION ===');
@@ -136,13 +130,5 @@ window.addEventListener('unhandledrejection', function(event) {
     console.error('Unhandled promise rejection:', event.reason);
     utils.showErrorMessage('Erreur de traitement asynchrone');
 });
-
-// Simuler les changements de statut en ligne
-setInterval(() => {
-    contactsModule.contacts.forEach(contact => {
-        // Simulation aléatoire du statut en ligne
-        statusManager.setUserOnline(contact.id, Math.random() > 0.5);
-    });
-}, 5000);
 
 console.log('✓ Main.js loaded and configured');

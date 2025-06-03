@@ -628,46 +628,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- Vérifier si l'utilisateur est connecté -->
-<script>
-// Vérifier si l'utilisateur est connecté
-if (!localStorage.getItem('isLoggedIn')) {
-    window.location.href = 'login.html';
-}
-
-// Afficher le nom d'utilisateur
-const userDisplay = document.getElementById('userDisplay');
-if (userDisplay) {
-    userDisplay.textContent = localStorage.getItem('username') || 'Utilisateur';
-}
-
-// Gérer le menu déroulant
-const menuButton = document.getElementById('menuButton');
-const dropdownMenu = document.getElementById('dropdownMenu');
-
-if (menuButton && dropdownMenu) {
-    menuButton.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
-    });
-
-    // Fermer le menu si on clique ailleurs
-    document.addEventListener('click', (event) => {
-        if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            dropdownMenu.classList.add('hidden');
-        }
-    });
-}
-
-// Fonction de déconnexion
-function handleLogout() {
-    // Supprimer les informations de connexion
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('username');
-
-    window.location.href = 'login.html';
-}
-</script>
-
 <!-- Placer ce script AVANT le script module -->
 <script type="module" src="src/main.js"></script>
   </body>

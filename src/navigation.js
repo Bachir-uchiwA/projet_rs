@@ -2,11 +2,6 @@ import * as contactsModule from './contacts.js';
 import * as groupsModule from './groups.js';
 import * as diffusionsModule from './diffusions.js';
 
-// Vérifier la connexion au début de chaque fichier JS
-if (!localStorage.getItem('isLoggedIn') && window.location.pathname.indexOf('login.html') === -1) {
-    window.location.href = 'login.html';
-}
-
 export function switchSection(section) {
     console.log('Switching to section:', section);
     
