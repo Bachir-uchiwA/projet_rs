@@ -56,6 +56,12 @@
     <title>JOTAAY - Connexion</title>
 </head>
 <body class="bg-gradient-to-br from-sidebar via-chat to-conversations min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+    <script>
+      // Redirige vers index.html si déjà connecté
+      if (localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'index.html';
+      }
+    </script>
     <!-- Formes flottantes décoratives -->
     <div class="absolute top-20 left-20 w-16 h-16 bg-primary/10 rounded-full blur-xl animate-pulse-slow"></div>
     <div class="absolute bottom-32 right-16 w-24 h-24 bg-yellow-300/20 rounded-full blur-xl animate-bounce-slow"></div>
